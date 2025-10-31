@@ -85,20 +85,20 @@ export default function AdminDashboard() {
           agentTypes[agent.agent_type] = (agentTypes[agent.agent_type] || 0) + 1;
         });
 
-        const agentTypeChartData = Object.entries(agentTypes).map(([type, count]) => ({
+        const agentTypeChartData: ChartData[] = Object.entries(agentTypes).map(([type, count]) => ({
           name: type.replace('_', ' '),
-          value: count,
+          value: count as number,
         }));
 
         // Mock chart data for weekly runs
         const mockChartData = [
-          { name: 'Mon', count: 12 },
-          { name: 'Tue', count: 19 },
-          { name: 'Wed', count: 15 },
-          { name: 'Thu', count: 25 },
-          { name: 'Fri', count: 22 },
-          { name: 'Sat', count: 18 },
-          { name: 'Sun', count: 10 },
+          { name: 'Mon', value: 12, count: 12 },
+          { name: 'Tue', value: 19, count: 19 },
+          { name: 'Wed', value: 15, count: 15 },
+          { name: 'Thu', value: 25, count: 25 },
+          { name: 'Fri', value: 22, count: 22 },
+          { name: 'Sat', value: 18, count: 18 },
+          { name: 'Sun', value: 10, count: 10 },
         ];
 
         setStats({

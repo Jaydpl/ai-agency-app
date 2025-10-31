@@ -153,8 +153,8 @@ export default function WorkflowCanvas({ workflow, onChange }: WorkflowCanvasPro
               setSelectedNode(node.id);
               setIsDragging(true);
             }}
-            onDrag={(e) => {
-              if (isDragging) {
+            onDrag={(e: any) => {
+              if (isDragging && e.clientX) {
                 updateNodePosition(node.id, e.clientX - 30, e.clientY - 30);
               }
             }}
