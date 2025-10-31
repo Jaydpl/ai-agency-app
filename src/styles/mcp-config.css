@@ -1,0 +1,359 @@
+.mcp-tools-config {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 15px;
+  border: 1px solid rgba(100, 200, 255, 0.1);
+}
+
+.mcp-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mcp-header h2 {
+  font-size: 24px;
+  color: #64c8ff;
+  margin: 0 0 10px 0;
+}
+
+.mcp-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* Add Server Section */
+.add-server-section {
+  background: rgba(100, 200, 255, 0.05);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.add-server-section h3 {
+  color: #64c8ff;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+
+.add-server-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 15px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(100, 200, 255, 0.5);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 0 10px rgba(100, 200, 255, 0.2);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-add-server {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-add-server:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn-add-server:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Servers Section */
+.servers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.servers-section h3 {
+  color: #64c8ff;
+  margin: 0;
+  font-size: 16px;
+}
+
+.empty-servers {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(100, 200, 255, 0.05);
+  border: 2px dashed rgba(100, 200, 255, 0.2);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.empty-servers p {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.empty-servers small {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.servers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.server-card {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.server-card:hover {
+  border-color: rgba(100, 200, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(100, 200, 255, 0.1);
+}
+
+.server-card.status-error {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.server-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.server-info h4 {
+  margin: 0 0 5px 0;
+  color: #64c8ff;
+  font-size: 16px;
+}
+
+.server-url {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin: 0 0 8px 0;
+  word-break: break-all;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.status-connected {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.status-badge.status-disconnected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-badge.status-error {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.btn-remove-server {
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-remove-server:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: scale(1.1);
+}
+
+/* Server Tools */
+.server-tools {
+  border-top: 1px solid rgba(100, 200, 255, 0.1);
+  padding-top: 15px;
+}
+
+.server-tools h5 {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.tool-item {
+  background: rgba(100, 200, 255, 0.05);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  background: rgba(100, 200, 255, 0.1);
+  border-color: rgba(100, 200, 255, 0.4);
+}
+
+.tool-item.selected {
+  background: rgba(100, 200, 255, 0.15);
+  border-color: rgba(100, 200, 255, 0.5);
+}
+
+.tool-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.tool-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #64c8ff;
+}
+
+.tool-name {
+  color: #64c8ff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tool-description {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Selected Tools Summary */
+.selected-tools-summary {
+  background: rgba(74, 222, 128, 0.05);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.selected-tools-summary h3 {
+  color: #4ade80;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.selected-tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selected-tool-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(74, 222, 128, 0.2);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  border-radius: 20px;
+  color: #4ade80;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Info Box */
+.mcp-info-box {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.mcp-info-box h4 {
+  color: #3b82f6;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.mcp-info-box p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.mcp-info-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.mcp-info-box li {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-server-form {
+    flex-direction: column;
+  }
+
+  .form-input {
+    min-width: 100%;
+  }
+
+  .btn-add-server {
+    width: 100%;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .server-header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,126 @@
+.workflow-canvas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+
+.canvas-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(100, 200, 255, 0.1);
+  border-radius: 10px;
+}
+
+.canvas-toolbar h3 {
+  margin: 0;
+  color: #64c8ff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.tool-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  color: #64c8ff;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tool-btn:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+  border-color: rgba(100, 200, 255, 0.5);
+  box-shadow: 0 5px 15px rgba(100, 200, 255, 0.2);
+}
+
+.canvas-area {
+  position: relative;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(100, 200, 255, 0.1);
+  border-radius: 10px;
+  overflow: auto;
+  min-height: 400px;
+}
+
+.canvas-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.workflow-node {
+  position: absolute;
+  padding: 15px 20px;
+  background: currentColor;
+  color: white;
+  border-radius: 8px;
+  cursor: move;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+  border: 2px solid transparent;
+}
+
+.workflow-node:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.workflow-node.selected {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(100, 200, 255, 0.5);
+}
+
+.workflow-node span {
+  display: block;
+  text-align: center;
+}
+
+.canvas-info {
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(100, 200, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .canvas-toolbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .toolbar-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .tool-btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .canvas-area {
+    min-height: 300px;
+  }
+}
