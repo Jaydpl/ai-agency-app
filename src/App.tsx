@@ -7,6 +7,7 @@ import SignupPage from './pages/SignupPage';
 import ClientDashboard from './pages/ClientDashboard';
 import AgentBuilder from './pages/AgentBuilder';
 import AdminDashboard from './pages/AdminDashboard';
+import ProfilePage from './pages/ProfilePage';
 import './App.css';
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
               <Route path="/agent-builder" element={<AgentBuilder />} />
               <Route path="/agent-builder/:agentId" element={<AgentBuilder />} />
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/settings" element={<ProfilePage />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </>
           )}
