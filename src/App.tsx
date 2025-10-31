@@ -1,21 +1,28 @@
-import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthStore } from './store/authStore';
+import { useState, useEffect } from 'react';
 import ToastProvider from './components/ToastProvider';
+import SplashScreen from './components/SplashScreen';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ClientDashboard from './pages/ClientDashboard';
 import AgentBuilder from './pages/AgentBuilder';
 import AdminDashboard from './pages/AdminDashboard';
 import ProfilePage from './pages/ProfilePage';
+import LandingPage from './pages/LandingPage';
 import './App.css';
 
 function App() {
   const { user, loading, checkAuth } = useAuthStore();
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
 
   if (loading) {
     return (
@@ -33,9 +40,10 @@ function App() {
         <Routes>
           {!user ? (
             <>
+              <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
-              <Route path="*" element={<Navigate to="/login" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
             <>
